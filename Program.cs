@@ -6,13 +6,13 @@ namespace Slotmachine
     {
         static void Main(string[] args)
         {
-            const char PLAY = ' ';
+
             const int GAME_PRICE = 3;
             const char ACE = 'A';
             const char KING = 'K';
             const char QUEEN = 'Q';
 
-            Console.WriteLine("Hello! Lets play the slotmachin!");
+            Console.WriteLine("Hello! Lets play the slotmachine!");
             Console.WriteLine("\n*********************************\n");
 
             Console.WriteLine($"Please insert some money! \nThe game preis is {GAME_PRICE}$");
@@ -33,43 +33,62 @@ namespace Slotmachine
 
             while (true)
             {
-                char randomFigure = '0';
-                Console.WriteLine("presse (SPACE) to spin! \nOr anything else to leave the game...");
-                char replay = char.ToLower(Console.ReadKey().KeyChar);
+                Console.WriteLine("\nPress (SPACE) to spin! \nOr anything else to leave the game...");
+                char play = char.ToLower(Console.ReadKey().KeyChar);
                 Console.Clear();
 
-                if (replay == PLAY && money >= GAME_PRICE)
+                if (play == ' ' && money >= GAME_PRICE)
                 {
-                    money = money - GAME_PRICE;
+                    money -= GAME_PRICE;
                     for (int i = 0; i < figureList.GetLength(0); i++)
                     {
                         for (int j = 0; j < figureList.GetLength(0); j++)
                         {
                             int randomrow = random.Next(0, figureList.GetLength(1));
-                            randomFigure = figureList[i, randomrow];
+                            char randomFigure = figureList[i, randomrow];
                             Console.Write(randomFigure);
                         }
                         Console.WriteLine();
 
+
+
                     }
-                    Console.WriteLine($"\nyour remain money is {money}$\n");
+                   
+                    if (money < GAME_PRICE)
+                    {
+                        Console.WriteLine("Please insert more money!");
+                        money = Convert.ToDouble(Console.ReadLine());
+                        continue;
+                    }
+                    for (int lineindex = 0; lineindex < figureList.GetLength(0); lineindex++)
+                    {
+                        if (figureList[lineindex, 0] == figureList[lineindex, 1] && figureList[lineindex, 1] == figureList[lineindex, 2])
+                        {
+                            Console.WriteLine("Congratulations! You've got a match in horizontal line!");
+                            money += GAME_PRICE;
+                        }
+
+                    }
+                    for (int verticalindex = 0; verticalindex < figureList.GetLength(0);  verticalindex++)
+                    {
+                        if (figureList[0, verticalindex] == figureList[1, verticalindex] && figureList[1, verticalindex] == figureList[2, verticalindex])
+                        {
+                            Console.WriteLine("Congratulations! You've got a match in horizontal line!");
+                            money += GAME_PRICE;
+                        }
+
+                    }
                 }
                 else
                 {
                     Console.WriteLine("\nOK! Goodbuy!");
                     break;
                 }
-                if (money < GAME_PRICE)
-                {
-                    Console.WriteLine("Please insert more money!");
-                    money = Convert.ToDouble(Console.ReadLine());
-                    continue;
-                }
-
-
-
-
+                Console.WriteLine($"Your remaining money is {money}$");
             }
         }
     }
 }
+
+
+
