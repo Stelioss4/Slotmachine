@@ -6,6 +6,7 @@ namespace Slotmachine
         static void Main(string[] args)
         {
             const int GAME_PRICE = 3;
+            const int MAX_CELL = 3;
             const char ACE = 'A';
             const char KING = 'K';
             const char QUEEN = 'Q';
@@ -29,37 +30,60 @@ namespace Slotmachine
                     money -= GAME_PRICE;
 
                     char[] figures = { ACE, KING, QUEEN };
-                    char[,] figureList = new char[3, 3];
+                    char[,] figureList = new char[MAX_CELL, MAX_CELL];
 
-                    for (int lineIndex = 0; lineIndex < 3; lineIndex++)
+                    for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
                     {
-                        for (int verticalIndex = 0; verticalIndex < 3; verticalIndex++)
+                        for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
                         {
-                            int randomIndex = rng.Next(0, 3);
+                            int randomIndex = rng.Next(0, MAX_CELL);
                             figureList[lineIndex, verticalIndex] = figures[randomIndex];
                             Console.Write(figureList[lineIndex, verticalIndex]);
                         }
                         Console.WriteLine();
                     }
 
-                    for (int lineIndex = 0; lineIndex < 3; lineIndex++)
+                    int numRows = figureList.GetLength(0);
+
+                    for (int lineIndex = 0; lineIndex < numRows; lineIndex++)
                     {
-                        bool rowMatch = figureList[lineIndex, 0] == figureList[lineIndex, 1] && figureList[lineIndex, 1] == figureList[lineIndex, 2];
+                        bool rowMatch = true;
+                        char firstChar = figureList[lineIndex, 0];
+
+                        for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
+                        {
+                            if (figureList[lineIndex, verticalIndex] != firstChar)
+                            {
+                                rowMatch = false;
+                                break;
+                            }
+                        }
                         if (rowMatch)
                         {
-                            Console.WriteLine("Congratulations! You've got a Horizontal match!");
+                            Console.WriteLine($"Congratulations! You've got a Horizontal match! You won {GAME_PRICE}");
                             money += GAME_PRICE;
-                            break;
                         }
                     }
-                    for (int verticalIndex = 0; verticalIndex < 3; verticalIndex++)
+
+                    int numCols = figureList.GetLength(1);
+
+                    for (int verticalIndex = 0; verticalIndex < numCols; verticalIndex++)
                     {
-                        bool colMatch = figureList[0, verticalIndex] == figureList[1, verticalIndex] && figureList[1, verticalIndex] == figureList[2, verticalIndex];
+                        bool colMatch = true;
+                        char firstChar = figureList[0, verticalIndex];
+
+                        for (int lineIndex = 1; lineIndex < MAX_CELL; lineIndex++)
+                        {
+                            if (figureList[lineIndex, verticalIndex] != firstChar)
+                            {
+                                colMatch = false;
+                                break;
+                            }
+                        }
                         if (colMatch)
                         {
-                            Console.WriteLine("Congratulations! You've got a Vertical match!");
+                            Console.WriteLine($"Congratulations! You've got a Vertical match! You won {GAME_PRICE}");
                             money += GAME_PRICE;
-                            break;
                         }
                     }
                 }
