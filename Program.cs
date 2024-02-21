@@ -12,7 +12,7 @@ namespace Slotmachine
             const char QUEEN = 'Q';
 
             Console.WriteLine("Hello! Let's play the slot machine!");
-            Console.WriteLine("\n*********************************\n");
+            Console.WriteLine("\n**********************************\n");
 
             Console.WriteLine($"Please insert some money! \nThe game price is {GAME_PRICE}$");
             double money = Convert.ToDouble(Console.ReadLine());
