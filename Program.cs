@@ -36,7 +36,7 @@ namespace Slotmachine
                     {
                         for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
                         {
-                            int randomIndex = rng.Next(0, MAX_CELL);
+                            int randomIndex = rng.Next(0, figureList.GetLength(0));
                             figureList[lineIndex, verticalIndex] = figures[randomIndex];
                             Console.Write(figureList[lineIndex, verticalIndex]);
                         }
