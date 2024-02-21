@@ -17,6 +17,9 @@ namespace Slotmachine
             Console.WriteLine($"Please insert some money! \nThe game price is {GAME_PRICE}$");
             double money = Convert.ToDouble(Console.ReadLine());
 
+            char[] figures = { ACE, KING, QUEEN };
+            char[,] figureList = new char[MAX_CELL, MAX_CELL];
+
             Random rng = new Random();
 
             while (true)
@@ -29,8 +32,7 @@ namespace Slotmachine
                 {
                     money -= GAME_PRICE;
 
-                    char[] figures = { ACE, KING, QUEEN };
-                    char[,] figureList = new char[MAX_CELL, MAX_CELL];
+                   
 
                     for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
                     {
