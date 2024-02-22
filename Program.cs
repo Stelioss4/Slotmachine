@@ -43,7 +43,7 @@ namespace Slotmachine
                         Console.WriteLine();
                     }
 
-                    for (int lineIndex = 0; lineIndex < figureList.GetLength(0); lineIndex++)
+                    for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
                     {
                         bool rowMatch = true;
                         char firstChar = figureList[lineIndex, 0];
@@ -63,7 +63,7 @@ namespace Slotmachine
                         }
                     }
 
-                    for (int verticalIndex = 0; verticalIndex < figureList.GetLength(1); verticalIndex++)
+                    for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
                     {
                         bool colMatch = true;
                         char firstChar = figureList[0, verticalIndex];
