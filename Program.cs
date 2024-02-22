@@ -32,13 +32,11 @@ namespace Slotmachine
                 {
                     money -= GAME_PRICE;
 
-                   
-
                     for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
                     {
                         for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
                         {
-                            int randomIndex = rng.Next(0, figureList.GetLength(0));
+                            int randomIndex = rng.Next(figures.Length);
                             figureList[lineIndex, verticalIndex] = figures[randomIndex];
                             Console.Write(figureList[lineIndex, verticalIndex]);
                         }
