@@ -18,7 +18,7 @@ namespace Slotmachine
             double money = Convert.ToDouble(Console.ReadLine());
 
             char[] figures = { ACE, KING, QUEEN };
-            char[,] figureList = new char[MAX_CELL, MAX_CELL];
+            char[,] symbolGrid = new char[MAX_CELL, MAX_CELL];
 
             Random rng = new Random();
 
@@ -37,8 +37,8 @@ namespace Slotmachine
                         for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
                         {
                             int randomIndex = rng.Next(figures.Length);
-                            figureList[lineIndex, verticalIndex] = figures[randomIndex];
-                            Console.Write(figureList[lineIndex, verticalIndex]);
+                            symbolGrid[lineIndex, verticalIndex] = figures[randomIndex];
+                            Console.Write(symbolGrid[lineIndex, verticalIndex]);
                         }
                         Console.WriteLine();
                     }
@@ -46,11 +46,11 @@ namespace Slotmachine
                     for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
                     {
                         bool rowMatch = true;
-                        char firstChar = figureList[lineIndex, 0];
+                        char firstChar = symbolGrid[lineIndex, 0];
 
                         for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
                         {
-                            if (figureList[lineIndex, verticalIndex] != firstChar)
+                            if (symbolGrid[lineIndex, verticalIndex] != firstChar)
                             {
                                 rowMatch = false;
                                 break;
@@ -66,11 +66,11 @@ namespace Slotmachine
                     for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
                     {
                         bool colMatch = true;
-                        char firstChar = figureList[0, verticalIndex];
+                        char firstChar = symbolGrid[0, verticalIndex];
 
                         for (int lineIndex = 1; lineIndex < MAX_CELL; lineIndex++)
                         {
-                            if (figureList[lineIndex, verticalIndex] != firstChar)
+                            if (symbolGrid[lineIndex, verticalIndex] != firstChar)
                             {
                                 colMatch = false;
                                 break;
