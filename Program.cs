@@ -223,7 +223,7 @@ namespace Slotmachine
                 else
                 {
                     Console.WriteLine("Thank you for playing! Goodbye.");
-                    Environment.Exit(0);
+                    break;
                 }
 
                 if (money < GAME_PRICE)
