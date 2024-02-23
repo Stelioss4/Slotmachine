@@ -16,12 +16,22 @@ namespace Slotmachine
             const char KING = 'K';
             const char QUEEN = 'Q';
 
+            double money = 0;
             Console.WriteLine("Hello! Let's play the slot machine!");
             Console.WriteLine("\n**********************************\n");
-
             Console.WriteLine($"Please please make a credit!\n");
-            double money = Convert.ToDouble(Console.ReadLine());
-
+            while (true)
+            {
+                try
+                {
+                    money = Convert.ToDouble(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("please enter only valide numbers!");
+                }
+            }
             char[] figures = { ACE, KING, QUEEN };
             char[,] symbolGrid = new char[MAX_CELL, MAX_CELL];
 
@@ -226,12 +236,23 @@ namespace Slotmachine
                     break;
                 }
 
+
                 if (money < GAME_PRICE)
                 {
-                    Console.WriteLine("Please insert more money!");
-                    money = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine($"Please insert more money!\n");
+                    while (true)
+                    {
+                        try
+                        {
+                            money = Convert.ToDouble(Console.ReadLine());
+                            break;
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("please enter only valide numbers!");
+                        }
+                    }
                 }
-
                 Console.WriteLine($"Your remaining money is {money}$");
 
             }
