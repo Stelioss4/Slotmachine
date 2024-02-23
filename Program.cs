@@ -1,12 +1,18 @@
 ﻿using System;
+using System.Diagnostics;
 namespace Slotmachine
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            const int LINE_PRICE = 1;
             const int GAME_PRICE = 3;
             const int MAX_CELL = 3;
+            const int MIDDLE_LINE = 1;
+            const int VERTICAL_LINES = 2;
+            const int LINES_COLOMNS = 3;
+            const int ALL_LINE = 4;
             const char ACE = 'A';
             const char KING = 'K';
             const char QUEEN = 'Q';
@@ -14,24 +20,32 @@ namespace Slotmachine
             Console.WriteLine("Hello! Let's play the slot machine!");
             Console.WriteLine("\n**********************************\n");
 
-            Console.WriteLine($"Please insert some money! \nThe game price is {GAME_PRICE}$");
+            Console.WriteLine($"Please please make a credit!\n");
             double money = Convert.ToDouble(Console.ReadLine());
 
             char[] figures = { ACE, KING, QUEEN };
             char[,] symbolGrid = new char[MAX_CELL, MAX_CELL];
 
+            Console.WriteLine
+                ($"\nPlease select which combinations of lines you want to play!\n" +
+                $"Presse {MIDDLE_LINE} to play only on Middle line! Line price is {MIDDLE_LINE}$\n" +
+                $"Presse {VERTICAL_LINES} to play with all horizontal lines! Line price is {VERTICAL_LINES}$\n" +
+                $"Presse {LINES_COLOMNS} to add all vertical lines! Line price is {LINES_COLOMNS}$\n" +
+                $"Presse {ALL_LINE} to add diagonal lines too! Line price is {ALL_LINE}$\n");
+
+            int lineSelection = Convert.ToInt32(Console.ReadLine());
+
             Random rng = new Random();
 
             while (true)
             {
-                Console.WriteLine("\nPress (SPACE) to spin! \nOr anything else to leave the game...");
-                char play = char.ToLower(Console.ReadKey().KeyChar);
+                Console.WriteLine("\nPress (SPACE) to spin the slot machine or any other key to exit.");
+                ConsoleKeyInfo keyInfo = Console.ReadKey();
+
                 Console.Clear();
 
-                if (play == ' ' && money >= GAME_PRICE)
+                if (keyInfo.Key == ConsoleKey.Spacebar && money >= LINE_PRICE)
                 {
-                    money -= GAME_PRICE;
-
                     for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
                     {
                         for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
@@ -42,11 +56,15 @@ namespace Slotmachine
                         }
                         Console.WriteLine();
                     }
-
-                    for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
+                    if (lineSelection == MIDDLE_LINE)
                     {
+                        int lineIndex = MIDDLE_LINE;
+
+                        money -= LINE_PRICE;
+
                         bool rowMatch = true;
                         char firstChar = symbolGrid[lineIndex, 0];
+
 
                         for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
                         {
@@ -56,37 +74,157 @@ namespace Slotmachine
                                 break;
                             }
                         }
+
                         if (rowMatch)
                         {
-                            Console.WriteLine($"Congratulations! You've got a Horizontal match! You won {GAME_PRICE}");
-                            money += GAME_PRICE;
+                            Console.WriteLine($"Congratulations! You've got a Horizontal match on the middle line! You won {LINE_PRICE}$");
+                            money += LINE_PRICE;
                         }
                     }
 
-                    for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
+                    if (lineSelection == VERTICAL_LINES)
                     {
-                        bool colMatch = true;
-                        char firstChar = symbolGrid[0, verticalIndex];
-
-                        for (int lineIndex = 1; lineIndex < MAX_CELL; lineIndex++)
+                        money -= VERTICAL_LINES;
+                        for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
                         {
-                            if (symbolGrid[lineIndex, verticalIndex] != firstChar)
+                            bool rowMatch = true;
+                            char firstChar = symbolGrid[lineIndex, 0];
+
+                            for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
                             {
-                                colMatch = false;
+                                if (symbolGrid[lineIndex, verticalIndex] != firstChar)
+                                {
+                                    rowMatch = false;
+                                    break;
+                                }
+                            }
+                            if (rowMatch)
+                            {
+                                Console.WriteLine($"Congratulations! You've got a Horizontal match! You won {LINE_PRICE}$");
+                                money += LINE_PRICE;
+                            }
+                        }
+                    }
+
+                    if (lineSelection == LINES_COLOMNS)
+                    {
+                        money -= GAME_PRICE;
+                        for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
+                        {
+                            bool rowMatch = true;
+                            char firstChar = symbolGrid[lineIndex, 0];
+
+                            for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
+                            {
+                                if (symbolGrid[lineIndex, verticalIndex] != firstChar)
+                                {
+                                    rowMatch = false;
+                                    break;
+                                }
+                            }
+                            if (rowMatch)
+                            {
+                                Console.WriteLine($"Congratulations! You've got a Horizontal match! You won {LINE_PRICE}$");
+                                money += LINE_PRICE;
+
+                            }
+                        }
+                        for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
+                        {
+                            bool colMatch = true;
+                            char firstChar = symbolGrid[0, verticalIndex];
+
+                            for (int lineIndex = 1; lineIndex < MAX_CELL; lineIndex++)
+                            {
+                                if (symbolGrid[lineIndex, verticalIndex] != firstChar)
+                                {
+                                    colMatch = false;
+                                    break;
+                                }
+                            }
+                            if (colMatch)
+                            {
+                                Console.WriteLine($"Congratulations! You've got a Vertical match! You won {LINE_PRICE}$");
+                                money += LINE_PRICE;
+
+                            }
+                        }
+                    }
+                    if (lineSelection == ALL_LINE)
+                    {
+                        money -= GAME_PRICE + LINE_PRICE;
+                        bool mainDiagonalMatch = true;
+                        char mainDiagonalChar = symbolGrid[0, 0];
+                        for (int i = 1; i < MAX_CELL; i++)
+                        {
+                            if (symbolGrid[i, i] != mainDiagonalChar)
+                            {
+                                mainDiagonalMatch = false;
                                 break;
                             }
                         }
-                        if (colMatch)
+                        bool secondaryDiagonalMatch = true;
+                        char secondaryDiagonalChar = symbolGrid[0, MAX_CELL - 1];
+                        for (int i = 1; i < MAX_CELL; i++)
                         {
-                            Console.WriteLine($"Congratulations! You've got a Vertical match! You won {GAME_PRICE}");
-                            money += GAME_PRICE;
+                            if (symbolGrid[i, MAX_CELL - 1 - i] != secondaryDiagonalChar)
+                            {
+                                secondaryDiagonalMatch = false;
+                                break;
+                            }
+                        }
+                        if (mainDiagonalMatch)
+                        {
+                            Console.WriteLine($"Congratulations! You've got a Main Diagonal match! You won {LINE_PRICE}$");
+                            money += LINE_PRICE;
+                        }
+                        if (secondaryDiagonalMatch)
+                        {
+                            Console.WriteLine($"Congratulations! You've got a Secondary Diagonal match! You won {LINE_PRICE}$");
+                            money += LINE_PRICE;
+                        }
+                        for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
+                        {
+                            bool rowMatch = true;
+                            char firstChar = symbolGrid[lineIndex, 0];
+                            for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
+                            {
+                                if (symbolGrid[lineIndex, verticalIndex] != firstChar)
+                                {
+                                    rowMatch = false;
+                                    break;
+                                }
+                            }
+                            if (rowMatch)
+                            {
+                                Console.WriteLine($"Congratulations! You've got a Horizontal match! You won {LINE_PRICE}$");
+                                money += LINE_PRICE;
+                            }
+                        }
+                        for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
+                        {
+                            bool colMatch = true;
+                            char firstChar = symbolGrid[0, verticalIndex];
+                            for (int lineIndex = 1; lineIndex < MAX_CELL; lineIndex++)
+                            {
+                                if (symbolGrid[lineIndex, verticalIndex] != firstChar)
+                                {
+                                    colMatch = false;
+                                    break;
+                                }
+                            }
+                            if (colMatch)
+                            {
+                                Console.WriteLine($"Congratulations! You've got a Vertical match! You won {LINE_PRICE}$");
+                                money += LINE_PRICE;
+                            }
                         }
                     }
                 }
                 else
                 {
-                    Console.WriteLine("\nOK! Goodbye!");
-                    break;
+                    Console.WriteLine("Thank you for playing! Goodbye.");
+                    Environment.Exit(0);
                 }
 
                 if (money < GAME_PRICE)
@@ -94,7 +232,9 @@ namespace Slotmachine
                     Console.WriteLine("Please insert more money!");
                     money = Convert.ToDouble(Console.ReadLine());
                 }
+
                 Console.WriteLine($"Your remaining money is {money}$");
+
             }
         }
     }
