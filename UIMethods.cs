@@ -32,7 +32,7 @@
                 try
                 {
                     gameline = Convert.ToInt32(Console.ReadLine());
-                    if (gameline >= MIDDLE_LINE || gameline <= ALL_LINE)
+                    if (gameline >= MIDDLE_LINE && gameline <= ALL_LINE)
                     {
                         break;
                     }
