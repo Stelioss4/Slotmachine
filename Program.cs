@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Slotmachine;
 namespace Slotmachine
 {
     internal class Program
@@ -15,45 +15,23 @@ namespace Slotmachine
             const char ACE = 'A';
             const char KING = 'K';
             const char QUEEN = 'Q';
-
             double money = 0;
-            Console.WriteLine("Hello! Let's play the slot machine!");
-            Console.WriteLine("\n**********************************\n");
-            Console.WriteLine($"Please please make a credit!\n");
-            while (true)
-            {
-                try
-                {
-                    money = Convert.ToDouble(Console.ReadLine());
-                    break;
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("please enter only valide numbers!");
-                }
-            }
+            int gameLines = 0;
+
+            UIMethods.welcomeMessage();
+
+            money = UIMethods.creditMaker(money);
+
             char[] figures = { ACE, KING, QUEEN };
             char[,] symbolGrid = new char[MAX_CELL, MAX_CELL];
 
-            Console.WriteLine
-                ($"\nPlease select which combinations of lines you want to play!\n" +
-                $"Presse {MIDDLE_LINE} to play only on Middle line! Line price is {MIDDLE_LINE}$\n" +
-                $"Presse {VERTICAL_LINES} to play with all horizontal lines! Line price is {VERTICAL_LINES}$\n" +
-                $"Presse {LINES_COLOMNS} to add all vertical lines! Line price is {LINES_COLOMNS}$\n" +
-                $"Presse {ALL_LINE} to add diagonal lines too! Line price is {ALL_LINE}$\n");
-
-            int lineSelection = Convert.ToInt32(Console.ReadLine());
+            gameLines = UIMethods.lineSelection(gameLines);
 
             Random rng = new Random();
 
             while (true)
             {
-                Console.WriteLine("\nPress (SPACE) to spin the slot machine or any other key to exit.");
-                ConsoleKeyInfo keyInfo = Console.ReadKey();
-
-                Console.Clear();
-
-                if (keyInfo.Key == ConsoleKey.Spacebar && money >= LINE_PRICE)
+                if (UIMethods.playOrNot() && money >= LINE_PRICE)
                 {
                     for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
                     {
@@ -61,11 +39,10 @@ namespace Slotmachine
                         {
                             int randomIndex = rng.Next(figures.Length);
                             symbolGrid[lineIndex, verticalIndex] = figures[randomIndex];
-                            Console.Write(symbolGrid[lineIndex, verticalIndex]);
                         }
-                        Console.WriteLine();
                     }
-                    if (lineSelection == MIDDLE_LINE)
+                    UIMethods.randomSymbol(symbolGrid);
+                    if (gameLines == MIDDLE_LINE)
                     {
                         int lineIndex = MIDDLE_LINE;
 
@@ -86,12 +63,12 @@ namespace Slotmachine
 
                         if (rowMatch)
                         {
-                            Console.WriteLine($"Congratulations! You've got a Horizontal match on the middle line! You won {LINE_PRICE}$");
+                            UIMethods.CongratHorizontalLine();
                             money += LINE_PRICE;
                         }
                     }
 
-                    if (lineSelection == VERTICAL_LINES)
+                    if (gameLines == VERTICAL_LINES)
                     {
                         money -= VERTICAL_LINES;
                         for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
@@ -109,13 +86,13 @@ namespace Slotmachine
                             }
                             if (rowMatch)
                             {
-                                Console.WriteLine($"Congratulations! You've got a Horizontal match! You won {LINE_PRICE}$");
+                                UIMethods.CongratHorizontalLine();
                                 money += LINE_PRICE;
                             }
                         }
                     }
 
-                    if (lineSelection == LINES_COLOMNS)
+                    if (gameLines == LINES_COLOMNS)
                     {
                         money -= GAME_PRICE;
                         for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
@@ -133,7 +110,7 @@ namespace Slotmachine
                             }
                             if (rowMatch)
                             {
-                                Console.WriteLine($"Congratulations! You've got a Horizontal match! You won {LINE_PRICE}$");
+                                UIMethods.CongratHorizontalLine();
                                 money += LINE_PRICE;
 
                             }
@@ -153,13 +130,13 @@ namespace Slotmachine
                             }
                             if (colMatch)
                             {
-                                Console.WriteLine($"Congratulations! You've got a Vertical match! You won {LINE_PRICE}$");
+                                UIMethods.CongatVerticalLine();
                                 money += LINE_PRICE;
 
                             }
                         }
                     }
-                    if (lineSelection == ALL_LINE)
+                    if (gameLines == ALL_LINE)
                     {
                         money -= GAME_PRICE + LINE_PRICE;
                         bool mainDiagonalMatch = true;
@@ -184,12 +161,12 @@ namespace Slotmachine
                         }
                         if (mainDiagonalMatch)
                         {
-                            Console.WriteLine($"Congratulations! You've got a Main Diagonal match! You won {LINE_PRICE}$");
+                            UIMethods.CongratDiagonalLine();
                             money += LINE_PRICE;
                         }
                         if (secondaryDiagonalMatch)
                         {
-                            Console.WriteLine($"Congratulations! You've got a Secondary Diagonal match! You won {LINE_PRICE}$");
+                            UIMethods.CongratDiagonalLine();
                             money += LINE_PRICE;
                         }
                         for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
@@ -206,7 +183,7 @@ namespace Slotmachine
                             }
                             if (rowMatch)
                             {
-                                Console.WriteLine($"Congratulations! You've got a Horizontal match! You won {LINE_PRICE}$");
+                                UIMethods.CongratHorizontalLine();
                                 money += LINE_PRICE;
                             }
                         }
@@ -224,7 +201,7 @@ namespace Slotmachine
                             }
                             if (colMatch)
                             {
-                                Console.WriteLine($"Congratulations! You've got a Vertical match! You won {LINE_PRICE}$");
+                                UIMethods.CongatVerticalLine();
                                 money += LINE_PRICE;
                             }
                         }
@@ -232,28 +209,17 @@ namespace Slotmachine
                 }
                 else
                 {
-                    Console.WriteLine("Thank you for playing! Goodbye.");
+                    UIMethods.goodbuyMessage();
                     break;
                 }
 
-
                 if (money < GAME_PRICE)
                 {
-                    Console.WriteLine($"Please insert more money!\n");
-                    while (true)
-                    {
-                        try
-                        {
-                            money = Convert.ToDouble(Console.ReadLine());
-                            break;
-                        }
-                        catch (Exception)
-                        {
-                            Console.WriteLine("please enter only valide numbers!");
-                        }
-                    }
+                    money = UIMethods.creditMaker(money);
                 }
-                Console.WriteLine($"Your remaining money is {money}$");
+
+                money = UIMethods.remainMoney(money);
+
 
             }
         }
