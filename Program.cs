@@ -3,18 +3,19 @@ namespace Slotmachine
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             const int LINE_PRICE = 1;
             const int GAME_PRICE = 3;
             const int MAX_CELL = 3;
             const int MIDDLE_LINE = 1;
-            const int VERTICAL_LINES = 2;
+            const int HORIZONTAL_LINES = 2;
             const int LINES_COLOMNS = 3;
             const int ALL_LINE = 4;
             const char ACE = 'A';
             const char KING = 'K';
             const char QUEEN = 'Q';
+
             double money = 0;
             int gameLines = 0;
 
@@ -27,184 +28,80 @@ namespace Slotmachine
 
             gameLines = UIMethods.lineSelection(gameLines);
 
-            Random rng = new Random();
-
             while (true)
             {
+
                 if (UIMethods.playOrNot() && money >= LINE_PRICE)
                 {
-                    for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
-                    {
-                        for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
-                        {
-                            int randomIndex = rng.Next(figures.Length);
-                            symbolGrid[lineIndex, verticalIndex] = figures[randomIndex];
-                        }
-                    }
+                    symbolGrid = Logic.randomGeneretor();
                     UIMethods.randomSymbol(symbolGrid);
+
                     if (gameLines == MIDDLE_LINE)
                     {
-                        int lineIndex = MIDDLE_LINE;
-
-                        money -= LINE_PRICE;
-
-                        bool rowMatch = true;
-                        char firstChar = symbolGrid[lineIndex, 0];
-
-
-                        for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
+                        money -= MIDDLE_LINE;
+                        int middleMatches = Logic.MiddleMatchControl(symbolGrid);
+                        if(middleMatches == LINE_PRICE)
                         {
-                            if (symbolGrid[lineIndex, verticalIndex] != firstChar)
-                            {
-                                rowMatch = false;
-                                break;
-                            }
+                            UIMethods.CongratHorizontalLine();
+                            money += LINE_PRICE;
                         }
-
-                        if (rowMatch)
+                       
+                    }
+                    if (gameLines == HORIZONTAL_LINES)
+                    {
+                        money -= HORIZONTAL_LINES;
+                        int numHorizontalMatches = Logic.HorizontalControl(symbolGrid);
+                        for (int i = 0; i < numHorizontalMatches; i++)
                         {
                             UIMethods.CongratHorizontalLine();
                             money += LINE_PRICE;
                         }
                     }
 
-                    if (gameLines == VERTICAL_LINES)
-                    {
-                        money -= VERTICAL_LINES;
-                        for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
-                        {
-                            bool rowMatch = true;
-                            char firstChar = symbolGrid[lineIndex, 0];
-
-                            for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
-                            {
-                                if (symbolGrid[lineIndex, verticalIndex] != firstChar)
-                                {
-                                    rowMatch = false;
-                                    break;
-                                }
-                            }
-                            if (rowMatch)
-                            {
-                                UIMethods.CongratHorizontalLine();
-                                money += LINE_PRICE;
-                            }
-                        }
-                    }
-
                     if (gameLines == LINES_COLOMNS)
                     {
                         money -= GAME_PRICE;
-                        for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
+                        int numHorizontalMatches = Logic.HorizontalControl(symbolGrid);
+                        for (int i = 0; i < numHorizontalMatches; i++)
                         {
-                            bool rowMatch = true;
-                            char firstChar = symbolGrid[lineIndex, 0];
-
-                            for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
-                            {
-                                if (symbolGrid[lineIndex, verticalIndex] != firstChar)
-                                {
-                                    rowMatch = false;
-                                    break;
-                                }
-                            }
-                            if (rowMatch)
-                            {
-                                UIMethods.CongratHorizontalLine();
-                                money += LINE_PRICE;
-
-                            }
+                            UIMethods.CongratHorizontalLine();
+                            money += LINE_PRICE;
                         }
-                        for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
+                        int numVerticalMatches = Logic.VerticalControl(symbolGrid);
+                        for (int i = 0; i < numVerticalMatches; i++)
                         {
-                            bool colMatch = true;
-                            char firstChar = symbolGrid[0, verticalIndex];
-
-                            for (int lineIndex = 1; lineIndex < MAX_CELL; lineIndex++)
-                            {
-                                if (symbolGrid[lineIndex, verticalIndex] != firstChar)
-                                {
-                                    colMatch = false;
-                                    break;
-                                }
-                            }
-                            if (colMatch)
-                            {
-                                UIMethods.CongatVerticalLine();
-                                money += LINE_PRICE;
-
-                            }
+                            UIMethods.CongatVerticalLine();
+                            money += LINE_PRICE;
                         }
                     }
+
                     if (gameLines == ALL_LINE)
                     {
                         money -= GAME_PRICE + LINE_PRICE;
-                        bool mainDiagonalMatch = true;
-                        char mainDiagonalChar = symbolGrid[0, 0];
-                        for (int i = 1; i < MAX_CELL; i++)
-                        {
-                            if (symbolGrid[i, i] != mainDiagonalChar)
-                            {
-                                mainDiagonalMatch = false;
-                                break;
-                            }
-                        }
-                        bool secondaryDiagonalMatch = true;
-                        char secondaryDiagonalChar = symbolGrid[0, MAX_CELL - 1];
-                        for (int i = 1; i < MAX_CELL; i++)
-                        {
-                            if (symbolGrid[i, MAX_CELL - 1 - i] != secondaryDiagonalChar)
-                            {
-                                secondaryDiagonalMatch = false;
-                                break;
-                            }
-                        }
-                        if (mainDiagonalMatch)
+                        int numDiagonalMatches = Logic.diagonalControl(symbolGrid);
+                        for(int i = 0; i < numDiagonalMatches; i++)
                         {
                             UIMethods.CongratDiagonalLine();
                             money += LINE_PRICE;
                         }
-                        if (secondaryDiagonalMatch)
+                        int numHorizontalMatches = Logic.HorizontalControl(symbolGrid);
+                        for (int i = 0; i < numHorizontalMatches; i++)
                         {
-                            UIMethods.CongratDiagonalLine();
+                            UIMethods.CongratHorizontalLine();
                             money += LINE_PRICE;
                         }
-                        for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
+                        int numVerticalMatches = Logic.VerticalControl(symbolGrid);
+                        for (int i = 0; i < numVerticalMatches; i++)
                         {
-                            bool rowMatch = true;
-                            char firstChar = symbolGrid[lineIndex, 0];
-                            for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
-                            {
-                                if (symbolGrid[lineIndex, verticalIndex] != firstChar)
-                                {
-                                    rowMatch = false;
-                                    break;
-                                }
-                            }
-                            if (rowMatch)
-                            {
-                                UIMethods.CongratHorizontalLine();
-                                money += LINE_PRICE;
-                            }
+                            UIMethods.CongatVerticalLine();
+                            money += LINE_PRICE;
                         }
-                        for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
-                        {
-                            bool colMatch = true;
-                            char firstChar = symbolGrid[0, verticalIndex];
-                            for (int lineIndex = 1; lineIndex < MAX_CELL; lineIndex++)
-                            {
-                                if (symbolGrid[lineIndex, verticalIndex] != firstChar)
-                                {
-                                    colMatch = false;
-                                    break;
-                                }
-                            }
-                            if (colMatch)
-                            {
-                                UIMethods.CongatVerticalLine();
-                                money += LINE_PRICE;
-                            }
-                        }
+                    }
+
+                    money = UIMethods.remainMoney(money);
+                    if (money < GAME_PRICE)
+                    {
+                        money = UIMethods.creditMaker(money);
                     }
                 }
                 else
@@ -212,15 +109,6 @@ namespace Slotmachine
                     UIMethods.goodbuyMessage();
                     break;
                 }
-
-                if (money < GAME_PRICE)
-                {
-                    money = UIMethods.creditMaker(money);
-                }
-
-                money = UIMethods.remainMoney(money);
-
-
             }
         }
     }

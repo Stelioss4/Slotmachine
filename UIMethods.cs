@@ -6,7 +6,7 @@
         const int GAME_PRICE = 3;
         const int MAX_CELL = 3;
         const int MIDDLE_LINE = 1;
-        const int VERTICAL_LINES = 2;
+        const int HORIZONTAL_LINES = 2;
         const int LINES_COLOMNS = 3;
         const int ALL_LINE = 4;
         const char ACE = 'A';
@@ -24,7 +24,7 @@
             Console.WriteLine
                 ($"\nPlease select which combinations of lines you want to play!\n" +
                 $"Presse {MIDDLE_LINE} to play only on Middle line! Line price is {MIDDLE_LINE}$\n" +
-                $"Presse {VERTICAL_LINES} to play with all horizontal lines! Line price is {VERTICAL_LINES}$\n" +
+                $"Presse {HORIZONTAL_LINES} to play with all horizontal lines! Line price is {HORIZONTAL_LINES}$\n" +
                 $"Presse {LINES_COLOMNS} to add all vertical lines! Line price is {LINES_COLOMNS}$\n" +
                 $"Presse {ALL_LINE} to add diagonal lines too! Line price is {ALL_LINE}$\n");
             while (true)
