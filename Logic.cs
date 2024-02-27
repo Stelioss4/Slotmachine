@@ -1,7 +1,4 @@
-﻿using System.Net.NetworkInformation;
-using System.Security.Cryptography.X509Certificates;
-
-namespace Slotmachine
+﻿namespace Slotmachine
 {
     public static class Logic
     {
@@ -20,7 +17,6 @@ namespace Slotmachine
             Random rng = new Random();
             char[] figures = { ACE, KING, QUEEN };
             char[,] symbolGrid = new char[MAX_CELL, MAX_CELL];
-
             for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
             {
                 for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
@@ -34,14 +30,10 @@ namespace Slotmachine
         public static int HorizontalControl(char[,] symbolGrid)
         {
             int horizontalMatches = 0;
-           // char[] figures = { ACE, KING, QUEEN };
-
-
             for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
             {
                 bool rowMatch = true;
                 char firstChar = symbolGrid[lineIndex, 0];
-
                 for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
                 {
                     if (symbolGrid[lineIndex, verticalIndex] != firstChar)
@@ -55,13 +47,8 @@ namespace Slotmachine
                     horizontalMatches++;
                 }
             }
-
             return horizontalMatches;
         }
-
-
-
-
         public static int VerticalControl(char[,] symbolGrid)
         {
             int verticalMatches = 0;
@@ -84,7 +71,6 @@ namespace Slotmachine
             }
             return verticalMatches;
         }
-
         public static int diagonalControl(char[,] symbolGrid)
         {
             int diagonalMatches = 0;
@@ -116,10 +102,8 @@ namespace Slotmachine
             {
                 diagonalMatches++;
             }
-
             return diagonalMatches;
         }
-
         public static int MiddleMatchControl(char[,] symbolGrid)
         {
             int middleMatches = 0; 
@@ -140,6 +124,5 @@ namespace Slotmachine
             }
             return middleMatches;
         }
-
     }
 }

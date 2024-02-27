@@ -1,5 +1,4 @@
-﻿using Slotmachine;
-namespace Slotmachine
+﻿namespace Slotmachine
 {
     internal class Program
     {
@@ -30,7 +29,6 @@ namespace Slotmachine
 
             while (true)
             {
-
                 if (UIMethods.playOrNot() && money >= LINE_PRICE)
                 {
                     symbolGrid = Logic.randomGeneretor();

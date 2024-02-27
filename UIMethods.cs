@@ -17,7 +17,6 @@
         {
             Console.WriteLine("Hello! Let's play the slot machine!");
             Console.WriteLine("\n**********************************\n");
-
         }
         public static int lineSelection(int gameline)
         {
@@ -44,12 +43,10 @@
             }
             return gameline;
         }
-
         public static void CongratHorizontalLine()
         {
             Console.WriteLine($"Congratulations! You've got a Horizontal match! You won {MIDDLE_LINE}$");
         }
-
         public static void CongatVerticalLine()
         {
             Console.WriteLine($"Congratulations! You've got a Vertival match! You won {MIDDLE_LINE}$");
@@ -57,7 +54,6 @@
         public static void CongratDiagonalLine()
         {
             Console.WriteLine($"Congratulations! You've got a Diagonal match! You won {MIDDLE_LINE}$");
-
         }
         public static void goodbuyMessage()
         {
@@ -107,4 +103,3 @@
         }
     }
 }
-
