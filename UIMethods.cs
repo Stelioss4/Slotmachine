@@ -43,15 +43,15 @@
             }
             return gameline;
         }
-        public static void CongratHorizontalLine()
+        public static void displayCongratsForHorizontalWin()
         {
             Console.WriteLine($"Congratulations! You've got a Horizontal match! You won {MIDDLE_LINE}$");
         }
-        public static void CongatVerticalLine()
+        public static void displayCongratsForVerticalWin()
         {
             Console.WriteLine($"Congratulations! You've got a Vertival match! You won {MIDDLE_LINE}$");
         }
-        public static void CongratDiagonalLine()
+        public static void displayCongratsForDiagonalWin()
         {
             Console.WriteLine($"Congratulations! You've got a Diagonal match! You won {MIDDLE_LINE}$");
         }
@@ -59,7 +59,7 @@
         {
             Console.WriteLine("Thank you for playing! Goodbye.");
         }
-        public static bool playOrNot()
+        public static bool playDecision()
         {
             Console.WriteLine("\nPress (SPACE) to spin the slot machine or any other key to exit.");
             ConsoleKeyInfo keyInfo = Console.ReadKey();
@@ -68,7 +68,7 @@
                 return (keyInfo.Key == ConsoleKey.Spacebar);
             }
         }
-        public static double creditMaker(double money)
+        public static double creditMake(double money)
         {
             Console.WriteLine("Please please make a credit!\n");
             while (true)

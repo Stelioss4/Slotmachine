@@ -6,17 +6,21 @@
         const int GAME_PRICE = 3;
         const int MAX_CELL = 3;
         const int MIDDLE_LINE = 1;
-        const int VERTICAL_LINES = 2;
+        const int HORIZONTAL_LINES = 2;
         const int LINES_COLOMNS = 3;
         const int ALL_LINE = 4;
         const char ACE = 'A';
         const char KING = 'K';
         const char QUEEN = 'Q';
+
+
         public static char[,] randomGeneretor()
         {
             Random rng = new Random();
+
             char[] figures = { ACE, KING, QUEEN };
             char[,] symbolGrid = new char[MAX_CELL, MAX_CELL];
+
             for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
             {
                 for (int verticalIndex = 0; verticalIndex < MAX_CELL; verticalIndex++)
@@ -76,6 +80,7 @@
             int diagonalMatches = 0;
             bool mainDiagonalMatch = true;
             char mainDiagonalChar = symbolGrid[0, 0];
+
             for (int i = 1; i < MAX_CELL; i++)
             {
                 if (symbolGrid[i, i] != mainDiagonalChar)
@@ -88,8 +93,10 @@
             {
                 diagonalMatches++;
             }
+
             bool secondaryDiagonalMatch = true;
             char secondaryDiagonalChar = symbolGrid[0, MAX_CELL - 1];
+
             for (int i = 1; i < MAX_CELL; i++)
             {
                 if (symbolGrid[i, MAX_CELL - 1 - i] != secondaryDiagonalChar)
@@ -104,12 +111,13 @@
             }
             return diagonalMatches;
         }
-        public static int MiddleMatchControl(char[,] symbolGrid)
+        public static int MiddleLineMatchControl(char[,] symbolGrid)
         {
-            int middleMatches = 0; 
+            int middleMatches = 0;
             int lineIndex = MIDDLE_LINE;
             bool rowMatch = true;
             char firstChar = symbolGrid[lineIndex, 0];
+
             for (int verticalIndex = 1; verticalIndex < MAX_CELL; verticalIndex++)
             {
                 if (symbolGrid[lineIndex, verticalIndex] != firstChar)
@@ -120,9 +128,52 @@
             }
             if (rowMatch)
             {
-               middleMatches++;
+                middleMatches++;
             }
             return middleMatches;
+        }
+        public static double HandleDiagonalMatches(char[,] symbolGrid , double money)
+        {
+            int numDiagonalMatches = Logic.diagonalControl(symbolGrid);
+
+            for (int i = 0; i < numDiagonalMatches; i++)
+            {
+                UIMethods.displayCongratsForDiagonalWin();
+                money += LINE_PRICE;
+            }
+            return money;
+        }
+        public static double HandleVerticalMatches(char[,] symbolGrid, double money)
+        {
+            
+            int numVerticalMatches = Logic.VerticalControl(symbolGrid);
+            for (int i = 0; i < numVerticalMatches; i++)
+            {
+                UIMethods.displayCongratsForVerticalWin();
+                money += LINE_PRICE;
+            }
+            return money;
+        }
+        public static double HandleHorizontalMatches(char[,] symbolGrid , double money)
+        {
+            
+            int numHorizontalMatches = Logic.HorizontalControl(symbolGrid);
+            for (int i = 0; i < numHorizontalMatches; i++)
+            {
+                UIMethods.displayCongratsForHorizontalWin();
+                money += LINE_PRICE;
+            }
+            return money;
+        }
+        public static double HandleMiddleLineMatch(char[,] symbolGrid , double money)
+        {
+            int middleMatches = Logic.MiddleLineMatchControl(symbolGrid);
+            money += middleMatches * LINE_PRICE;
+            if (middleMatches > 0)
+            {
+                UIMethods.displayCongratsForHorizontalWin();
+            }
+            return money;
         }
     }
 }
