@@ -96,5 +96,6 @@
             Console.WriteLine($"Your remaining money is {money}$");
             return money;
         }
+    
     }
 }

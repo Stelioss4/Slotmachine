@@ -1,4 +1,6 @@
-﻿namespace Slotmachine
+﻿using System.Xml.Serialization;
+
+namespace Slotmachine
 {
     public static class Logic
     {
@@ -9,7 +11,7 @@
         const char KING = 'K';
         const char QUEEN = 'Q';
 
-        public static char[,] randomGeneretor()
+        public static char[,] GenerateRandomGrid()
         {
             Random rng = new Random();
 

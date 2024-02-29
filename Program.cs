@@ -27,7 +27,7 @@
             {
                 if (UIMethods.AskToPlayAgain() && money >= LINE_PRICE)
                 {
-                    symbolGrid = Logic.randomGeneretor();
+                    symbolGrid = Logic.GenerateRandomGrid();
                     UIMethods.DisplayRandomSymbolGrid(symbolGrid);
 
                     if (MIDDLE_LINE == gameLines)
