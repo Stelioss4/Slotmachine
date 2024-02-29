@@ -30,26 +30,26 @@
                     symbolGrid = Logic.randomGeneretor();
                     UIMethods.randomSymbol(symbolGrid);
 
-                    if (gameLines == MIDDLE_LINE)
+                    if (MIDDLE_LINE == gameLines)
                     {
                         money -= MIDDLE_LINE;
                         money = Logic.HandleMiddleLineMatch(symbolGrid, money);
 
                     }
-                    if (gameLines == HORIZONTAL_LINES)
+                    if (HORIZONTAL_LINES == gameLines)
                     {
                         money -= HORIZONTAL_LINES;
                         money = Logic.HandleHorizontalMatches(symbolGrid, money);
                     }
 
-                    if (gameLines == LINES_COLOMNS)
+                    if (LINES_COLOMNS == gameLines)
                     {
-                        money -= GAME_PRICE;
+                        money -= LINES_COLOMNS;
                         money = Logic.HandleVerticalMatches(symbolGrid, money);
                         money = Logic.HandleHorizontalMatches(symbolGrid, money);
                     }
 
-                    if (gameLines == ALL_LINE)
+                    if (ALL_LINE == gameLines)
                     {
                         money -= ALL_LINE;
                         money = Logic.HandleVerticalMatches(symbolGrid, money);
