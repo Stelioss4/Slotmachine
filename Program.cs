@@ -38,21 +38,18 @@
                     {
                         money -= MIDDLE_LINE;
                         money = Logic.HandleMiddleLineMatch(symbolGrid, money);
-
                     }
                     if (gameLines == HORIZONTAL_LINES)
                     {
                         money -= HORIZONTAL_LINES;
                         money = Logic.HandleHorizontalMatches(symbolGrid, money);
                     }
-
                     if (gameLines == LINES_COLOMNS)
                     {
                         money -= GAME_PRICE;
                         money = Logic.HandleVerticalMatches(symbolGrid, money);
                         money = Logic.HandleHorizontalMatches(symbolGrid, money);
                     }
-
                     if (gameLines == ALL_LINE)
                     {
                         money -= ALL_LINE;
