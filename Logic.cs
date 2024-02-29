@@ -129,7 +129,7 @@
         }
         public static double HandleDiagonalMatches(char[,] symbolGrid , double money)
         {
-            int numDiagonalMatches = Logic.diagonalControl(symbolGrid);
+            int numDiagonalMatches = diagonalControl(symbolGrid);
 
             for (int i = 0; i < numDiagonalMatches; i++)
             {
@@ -141,7 +141,7 @@
         public static double HandleVerticalMatches(char[,] symbolGrid, double money)
         {
             
-            int numVerticalMatches = Logic.VerticalControl(symbolGrid);
+            int numVerticalMatches = VerticalControl(symbolGrid);
             for (int i = 0; i < numVerticalMatches; i++)
             {
                 UIMethods.displayCongratsForVerticalWin();
@@ -152,7 +152,7 @@
         public static double HandleHorizontalMatches(char[,] symbolGrid , double money)
         {
             
-            int numHorizontalMatches = Logic.HorizontalControl(symbolGrid);
+            int numHorizontalMatches = HorizontalControl(symbolGrid);
             for (int i = 0; i < numHorizontalMatches; i++)
             {
                 UIMethods.displayCongratsForHorizontalWin();
@@ -162,7 +162,7 @@
         }
         public static double HandleMiddleLineMatch(char[,] symbolGrid , double money)
         {
-            int middleMatches = Logic.MiddleLineMatchControl(symbolGrid);
+            int middleMatches = MiddleLineMatchControl(symbolGrid);
             if (middleMatches > 0)
             {
                 UIMethods.displayCongratsForHorizontalWin();
