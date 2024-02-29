@@ -11,10 +11,7 @@
             const int HORIZONTAL_LINES = 2;
             const int LINES_COLOMNS = 3;
             const int ALL_LINE = 4;
-            const char ACE = 'A';
-            const char KING = 'K';
-            const char QUEEN = 'Q';
-
+           
             double money = 0;
             int gameLines = 0;
 
@@ -22,7 +19,6 @@
 
             money = UIMethods.creditMake(money);
 
-            char[] figures = { ACE, KING, QUEEN };
             char[,] symbolGrid = new char[MAX_CELL, MAX_CELL];
 
             gameLines = UIMethods.lineSelection(gameLines);

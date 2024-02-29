@@ -3,16 +3,11 @@
     public static class Logic
     {
         const int LINE_PRICE = 1;
-        const int GAME_PRICE = 3;
         const int MAX_CELL = 3;
         const int MIDDLE_LINE = 1;
-        const int HORIZONTAL_LINES = 2;
-        const int LINES_COLOMNS = 3;
-        const int ALL_LINE = 4;
         const char ACE = 'A';
         const char KING = 'K';
         const char QUEEN = 'Q';
-
 
         public static char[,] randomGeneretor()
         {
