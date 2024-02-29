@@ -163,10 +163,10 @@
         public static double HandleMiddleLineMatch(char[,] symbolGrid , double money)
         {
             int middleMatches = Logic.MiddleLineMatchControl(symbolGrid);
-            money += middleMatches * LINE_PRICE;
             if (middleMatches > 0)
             {
                 UIMethods.displayCongratsForHorizontalWin();
+                money += middleMatches * LINE_PRICE;
             }
             return money;
         }
