@@ -8,12 +8,12 @@
         const int LINES_COLOMNS = 3;
         const int ALL_LINE = 4;
 
-        public static void welcomeMessage()
+        public static void DisplaySlotMachineIntroduction()
         {
             Console.WriteLine("Hello! Let's play the slot machine!");
             Console.WriteLine("\n**********************************\n");
         }
-        public static int lineSelection(int gameline)
+        public static int SelectSlotMachineLines(int gameline)
         {
             Console.WriteLine
                 ($"\nPlease select which combinations of lines you want to play!\n" +
@@ -50,11 +50,11 @@
         {
             Console.WriteLine($"Congratulations! You've got a Diagonal match! You won {MIDDLE_LINE}$");
         }
-        public static void goodbuyMessage()
+        public static void DisplayGoodbuyMessage()
         {
             Console.WriteLine("Thank you for playing! Goodbye.");
         }
-        public static bool playDecision()
+        public static bool AskToPlayAgain()
         {
             Console.WriteLine("\nPress (SPACE) to spin the slot machine or any other key to exit.");
             ConsoleKeyInfo keyInfo = Console.ReadKey();
@@ -63,7 +63,7 @@
                 return (keyInfo.Key == ConsoleKey.Spacebar);
             }
         }
-        public static double creditMake(double money)
+        public static double MakeCredit(double money)
         {
             Console.WriteLine("Please please make a credit!\n");
             while (true)
@@ -80,7 +80,7 @@
             }
             return money;
         }
-        public static void randomSymbol(char[,] symbolGrid)
+        public static void DisplayRandomSymbolGrid(char[,] symbolGrid)
         {
             for (int lineIndex = 0; lineIndex < MAX_CELL; lineIndex++)
             {
@@ -91,7 +91,7 @@
                 Console.WriteLine();
             }
         }
-        public static double remainMoney(double money)
+        public static double DisplayRemainingMoney(double money)
         {
             Console.WriteLine($"Your remaining money is {money}$");
             return money;

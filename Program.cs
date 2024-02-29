@@ -15,20 +15,20 @@
             double money = 0;
             int gameLines = 0;
 
-            UIMethods.welcomeMessage();
+            UIMethods.DisplaySlotMachineIntroduction();
 
-            money = UIMethods.creditMake(money);
+            money = UIMethods.MakeCredit(money);
 
             char[,] symbolGrid = new char[MAX_CELL, MAX_CELL];
 
-            gameLines = UIMethods.lineSelection(gameLines);
+            gameLines = UIMethods.SelectSlotMachineLines(gameLines);
 
             while (true)
             {
-                if (UIMethods.playDecision() && money >= LINE_PRICE)
+                if (UIMethods.AskToPlayAgain() && money >= LINE_PRICE)
                 {
                     symbolGrid = Logic.randomGeneretor();
-                    UIMethods.randomSymbol(symbolGrid);
+                    UIMethods.DisplayRandomSymbolGrid(symbolGrid);
 
                     if (MIDDLE_LINE == gameLines)
                     {
@@ -56,15 +56,15 @@
                         money = Logic.HandleHorizontalMatches(symbolGrid, money);
                         money = Logic.HandleDiagonalMatches(symbolGrid, money);
                     }
-                    money = UIMethods.remainMoney(money);
+                    money = UIMethods.DisplayRemainingMoney(money);
                     if (money < GAME_PRICE)
                     {
-                        money = UIMethods.creditMake(money);
+                        money = UIMethods.MakeCredit(money);
                     }
                 }
                 else
                 {
-                    UIMethods.goodbuyMessage();
+                    UIMethods.DisplayGoodbuyMessage();
                     break;
                 }
             }
