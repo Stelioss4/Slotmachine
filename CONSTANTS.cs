@@ -15,8 +15,11 @@ namespace Slotmachine
       public const int HORIZONTAL_LINES = 2;
       public const int LINES_COLOMNS = 3;
       public const int ALL_LINE = 4;
-      public const char ACE = 'A';
-      public const char KING = 'K';
-      public const char QUEEN = 'Q';
+      public const string CHERRY = "🍒";
+      public const string LEMON = "🍋";
+      public const string BELL = "🔔";
+      public const string WATERMELON = "🍉";
+      public const string STAR = "⭐";
+      public const string DIAMOND = "💎";
     }
 }

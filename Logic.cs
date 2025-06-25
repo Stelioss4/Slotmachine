@@ -1,13 +1,13 @@
 ﻿namespace Slotmachine
 {
-    public static class Logic
+    public class Logic
     {
-        public static char[,] GenerateRandomGrid()
+        public string[,] GenerateRandomGrid()
         {
             Random rng = new Random();
 
-            char[] figures = { CONSTANTS.ACE, CONSTANTS.KING, CONSTANTS.QUEEN };
-            char[,] symbolGrid = new char[CONSTANTS.MAX_CELL, CONSTANTS.MAX_CELL];
+            string[] figures = { CONSTANTS.CHERRY, CONSTANTS.WATERMELON, CONSTANTS.DIAMOND, CONSTANTS.STAR, CONSTANTS.BELL, CONSTANTS.LEMON };
+            string[,] symbolGrid = new string[CONSTANTS.MAX_CELL, CONSTANTS.MAX_CELL];
 
             for (int lineIndex = 0; lineIndex < CONSTANTS.MAX_CELL; lineIndex++)
             {
@@ -20,13 +20,13 @@
             return symbolGrid;
         }
 
-        public static int HorizontalControl(char[,] symbolGrid)
+        public static int HorizontalControl(string[,] symbolGrid)
         {
             int horizontalMatches = 0;
             for (int lineIndex = 0; lineIndex < CONSTANTS.MAX_CELL; lineIndex++)
             {
                 bool rowMatch = true;
-                char firstChar = symbolGrid[lineIndex, 0];
+                string firstChar = symbolGrid[lineIndex, 0];
                 for (int verticalIndex = 1; verticalIndex < CONSTANTS.MAX_CELL; verticalIndex++)
                 {
                     if (symbolGrid[lineIndex, verticalIndex] != firstChar)
@@ -43,13 +43,13 @@
             return horizontalMatches;
         }
 
-        public static int VerticalControl(char[,] symbolGrid)
+        public static int VerticalControl(string[,] symbolGrid)
         {
             int verticalMatches = 0;
             for (int verticalIndex = 0; verticalIndex < CONSTANTS.MAX_CELL; verticalIndex++)
             {
                 bool colMatch = true;
-                char firstChar = symbolGrid[0, verticalIndex];
+                string firstChar = symbolGrid[0, verticalIndex];
                 for (int lineIndex = 1; lineIndex < CONSTANTS.MAX_CELL; lineIndex++)
                 {
                     if (symbolGrid[lineIndex, verticalIndex] != firstChar)
@@ -66,11 +66,11 @@
             return verticalMatches;
         }
 
-        public static int diagonalControl(char[,] symbolGrid)
+        public static int diagonalControl(string[,] symbolGrid)
         {
             int diagonalMatches = 0;
             bool mainDiagonalMatch = true;
-            char mainDiagonalChar = symbolGrid[0, 0];
+            string mainDiagonalChar = symbolGrid[0, 0];
 
             for (int i = 1; i < CONSTANTS.MAX_CELL; i++)
             {
@@ -86,7 +86,7 @@
             }
 
             bool secondaryDiagonalMatch = true;
-            char secondaryDiagonalChar = symbolGrid[0, CONSTANTS.MAX_CELL - 1];
+            string secondaryDiagonalChar = symbolGrid[0, CONSTANTS.MAX_CELL - 1];
 
             for (int i = 1; i < CONSTANTS.MAX_CELL; i++)
             {
@@ -103,12 +103,12 @@
             return diagonalMatches;
         }
 
-        public static int MiddleLineMatchControl(char[,] symbolGrid)
+        public static int MiddleLineMatchControl(string[,] symbolGrid)
         {
             int middleMatches = 0;
             int lineIndex = CONSTANTS.MIDDLE_LINE;
             bool rowMatch = true;
-            char firstChar = symbolGrid[lineIndex, 0];
+            string firstChar = symbolGrid[lineIndex, 0];
 
             for (int verticalIndex = 1; verticalIndex < CONSTANTS.MAX_CELL; verticalIndex++)
             {
@@ -125,7 +125,7 @@
             return middleMatches;
         }
 
-        public static double HandleDiagonalMatches(char[,] symbolGrid , double money)
+        public static double HandleDiagonalMatches(string[,] symbolGrid , double money)
         {
             int numDiagonalMatches = diagonalControl(symbolGrid);
 
@@ -137,7 +137,7 @@
             return money;
         }
 
-        public static double HandleVerticalMatches(char[,] symbolGrid, double money)
+        public static double HandleVerticalMatches(string[,] symbolGrid, double money)
         {
             
             int numVerticalMatches = VerticalControl(symbolGrid);
@@ -149,7 +149,7 @@
             return money;
         }
 
-        public static double HandleHorizontalMatches(char[,] symbolGrid , double money)
+        public static double HandleHorizontalMatches(string[,] symbolGrid , double money)
         {
             
             int numHorizontalMatches = HorizontalControl(symbolGrid);
@@ -161,7 +161,7 @@
             return money;
         }
 
-        public static double HandleMiddleLineMatch(char[,] symbolGrid , double money)
+        public static double HandleMiddleLineMatch(string[,] symbolGrid , double money)
         {
             int middleMatches = MiddleLineMatchControl(symbolGrid);
             if (middleMatches > 0)
