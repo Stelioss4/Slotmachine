@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Slotmachine
 {
-    internal class CONSTANTS
+    public static class CONSTANTS
     {
       public const int LINE_PRICE = 1;
       public const int GAME_PRICE = 3;
@@ -15,6 +15,7 @@ namespace Slotmachine
       public const int HORIZONTAL_LINES = 2;
       public const int LINES_COLOMNS = 3;
       public const int ALL_LINE = 4;
+      public const int MAX_WIN = 5;
       public const string CHERRY = "🍒";
       public const string LEMON = "🍋";
       public const string BELL = "🔔";
