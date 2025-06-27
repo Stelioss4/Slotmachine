@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slotmachine", "Slotmachine\Slotmachine.csproj", "{9CD061C0-C0A2-D4E7-5422-67F13CDD32F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlotMachine.UI.WPF", "SlotMachine.UI.WPF\SlotMachine.UI.WPF.csproj", "{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CD061C0-C0A2-D4E7-5422-67F13CDD32F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CD061C0-C0A2-D4E7-5422-67F13CDD32F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CD061C0-C0A2-D4E7-5422-67F13CDD32F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CD061C0-C0A2-D4E7-5422-67F13CDD32F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9926626-CABA-4C36-94AC-95D87A454331}
+	EndGlobalSection
+EndGlobal
