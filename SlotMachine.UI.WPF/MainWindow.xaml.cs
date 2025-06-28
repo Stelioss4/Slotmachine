@@ -44,27 +44,27 @@ namespace SlotMachine.UI.WPF
             CoinDisplay.Text = $"💰 Coins: {coins}";
             SpinButton.IsEnabled = false;
 
-            string[,] finalGrid = new string[3, 3];
+            string[,] finalGrid = new string[CONSTANTS.MAX_CELL, CONSTANTS.MAX_CELL];
 
             // Simulate spinning animation
-            for (int spin = 0; spin < 10; spin++) // 10 quick flashes
+            for (int spin = 0; spin < CONSTANTS.SPIN_DELAY; spin++)
             {
-                for (int row = 0; row < 3; row++)
+                for (int row = 0; row < CONSTANTS.MAX_CELL; row++)
                 {
-                    for (int col = 0; col < 3; col++)
+                    for (int col = 0; col < CONSTANTS.MAX_CELL; col++)
                     {
                         string symbol = symbols[random.Next(symbols.Length)];
-                        var reel = (TextBlock)this.FindName($"Reel{row * 3 + col + 1}");
+                        var reel = (TextBlock)this.FindName($"Reel{row * CONSTANTS.MAX_CELL + col + 1}");
                         reel.Text = symbol;
 
-                        if (spin == 9) // Final spin
+                        if (spin == CONSTANTS.FINAL_SPIN)
                         {
                             finalGrid[row, col] = symbol;
                         }
                     }
                 }
 
-                await Task.Delay(100); // 100ms delay between spins
+                await Task.Delay(CONSTANTS.SPIN_FRAME_DELAY);
             }
 
             int winnings = CalculateWinnings(finalGrid);
@@ -92,36 +92,54 @@ namespace SlotMachine.UI.WPF
             WinningsBanner.Text = $"🎉 You won {winnings} coins!";
             WinningsBanner.Visibility = Visibility.Visible;
 
-            await Task.Delay(2000); // Show for 2 seconds
+            await Task.Delay(CONSTANTS.BANNER_DISPLAY_TIME);
 
             WinningsBanner.Visibility = Visibility.Collapsed;
         }
-
 
         private int CalculateWinnings(string[,] grid)
         {
             int total = 0;
 
-            for (int row = 0; row < 3; row++)
+            // Horizontal lines
+            for (int row = 0; row < CONSTANTS.MAX_CELL; row++)
             {
-                if (grid[row, 0] == grid[row, 1] && grid[row, 1] == grid[row, 2])
+                if (grid[row, 0] == grid[row, CONSTANTS.MIDDLE_LINE] &&
+                    grid[row, CONSTANTS.MIDDLE_LINE] == grid[row, CONSTANTS.HORIZONTAL_LINES])
+                {
                     total += CONSTANTS.MAX_WIN;
+                }
             }
 
-            for (int col = 0; col < 3; col++)
+            // Vertical lines
+            for (int col = 0; col < CONSTANTS.MAX_CELL; col++)
             {
-                if (grid[0, col] == grid[1, col] && grid[1, col] == grid[2, col])
+                if (grid[0, col] == grid[CONSTANTS.MIDDLE_LINE, col] &&
+                    grid[CONSTANTS.MIDDLE_LINE, col] == grid[CONSTANTS.HORIZONTAL_LINES, col])
+                {
                     total += CONSTANTS.MAX_WIN;
+                }
             }
 
-            if (grid[0, 0] == grid[1, 1] && grid[1, 1] == grid[2, 2])
+            // Diagonals
+            if (grid[0, 0] == grid[CONSTANTS.MIDDLE_LINE, CONSTANTS.MIDDLE_LINE] &&
+                grid[CONSTANTS.MIDDLE_LINE, CONSTANTS.MIDDLE_LINE] == grid[CONSTANTS.HORIZONTAL_LINES, CONSTANTS.HORIZONTAL_LINES])
+            {
                 total += CONSTANTS.MAX_WIN;
+            }
 
-            if (grid[0, 2] == grid[1, 1] && grid[1, 1] == grid[2, 0])
+            if (grid[0, CONSTANTS.HORIZONTAL_LINES] == grid[CONSTANTS.MIDDLE_LINE, CONSTANTS.MIDDLE_LINE] &&
+                grid[CONSTANTS.MIDDLE_LINE, CONSTANTS.MIDDLE_LINE] == grid[CONSTANTS.HORIZONTAL_LINES, 0])
+            {
                 total += CONSTANTS.MAX_WIN;
+            }
 
-            if (grid[1, 0] == grid[1, 1] && grid[1, 1] == grid[1, 2])
+            // Middle row line
+            if (grid[CONSTANTS.MIDDLE_LINE, 0] == grid[CONSTANTS.MIDDLE_LINE, CONSTANTS.MIDDLE_LINE] &&
+                grid[CONSTANTS.MIDDLE_LINE, CONSTANTS.MIDDLE_LINE] == grid[CONSTANTS.MIDDLE_LINE, CONSTANTS.HORIZONTAL_LINES])
+            {
                 total += CONSTANTS.MAX_WIN;
+            }
 
             return total;
         }

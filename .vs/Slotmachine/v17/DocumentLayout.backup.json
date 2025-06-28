@@ -3,38 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{19826F3F-C89C-422A-AC28-4B14FD6A83A0}|..\\SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine.ui.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{9CD061C0-C0A2-D4E7-5422-67F13CDD32F2}|Slotmachine\\Slotmachine.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine\\slotmachine\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CD061C0-C0A2-D4E7-5422-67F13CDD32F2}|Slotmachine\\Slotmachine.csproj|solutionrelative:slotmachine\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19826F3F-C89C-422A-AC28-4B14FD6A83A0}|..\\SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine.ui.wpf\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}|SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine\\slotmachine.ui.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}|SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|solutionrelative:slotmachine.ui.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19826F3F-C89C-422A-AC28-4B14FD6A83A0}|..\\SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine.ui.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9CD061C0-C0A2-D4E7-5422-67F13CDD32F2}|Slotmachine\\Slotmachine.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine\\slotmachine\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CD061C0-C0A2-D4E7-5422-67F13CDD32F2}|Slotmachine\\Slotmachine.csproj|solutionrelative:slotmachine\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19826F3F-C89C-422A-AC28-4B14FD6A83A0}|..\\SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine.ui.wpf\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}|SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine\\slotmachine.ui.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}|SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|solutionrelative:slotmachine.ui.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19826F3F-C89C-422A-AC28-4B14FD6A83A0}|..\\SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine.ui.wpf\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk.WindowsDesktop\\targets\\Microsoft.NET.Sdk.WindowsDesktop.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19826F3F-C89C-422A-AC28-4B14FD6A83A0}|..\\SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine.ui.wpf\\models\\slotsymbol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ADD1FE-2F63-44F7-8B8E-320AED1DFDF0}|Slotmachine.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ADD1FE-2F63-44F7-8B8E-320AED1DFDF0}|Slotmachine.csproj|solutionrelative:constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}|SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine\\slotmachine.ui.wpf\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}|SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|solutionrelative:slotmachine.ui.wpf\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33ADD1FE-2F63-44F7-8B8E-320AED1DFDF0}|Slotmachine.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine\\uimethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ADD1FE-2F63-44F7-8B8E-320AED1DFDF0}|Slotmachine.csproj|solutionrelative:uimethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ADD1FE-2F63-44F7-8B8E-320AED1DFDF0}|Slotmachine.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ADD1FE-2F63-44F7-8B8E-320AED1DFDF0}|Slotmachine.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33ADD1FE-2F63-44F7-8B8E-320AED1DFDF0}|Slotmachine.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33ADD1FE-2F63-44F7-8B8E-320AED1DFDF0}|Slotmachine.csproj|solutionrelative:logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}|SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|c:\\users\\steli_88yt7cd\\source\\repos\\slotmachine\\slotmachine.ui.wpf\\models\\slotsymbol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AAEC27C-4A1C-4BB5-B7AA-57429FCC5B87}|SlotMachine.UI.WPF\\SlotMachine.UI.WPF.csproj|solutionrelative:slotmachine.ui.wpf\\models\\slotsymbol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,7 +40,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -56,124 +52,102 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "..\\SlotMachine.UI.WPF\\AssemblyInfo.cs",
-              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\AssemblyInfo.cs",
-              "RelativeToolTip": "..\\SlotMachine.UI.WPF\\AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Logic.cs",
+              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\Slotmachine\\Logic.cs",
+              "RelativeDocumentMoniker": "Slotmachine\\Logic.cs",
+              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\Slotmachine\\Logic.cs",
+              "RelativeToolTip": "Slotmachine\\Logic.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T01:09:35.35Z"
+              "WhenOpened": "2025-06-28T00:14:34.097Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BaseViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\ViewModels\\BaseViewModel.cs",
-              "RelativeDocumentMoniker": "..\\SlotMachine.UI.WPF\\ViewModels\\BaseViewModel.cs",
-              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\ViewModels\\BaseViewModel.cs",
-              "RelativeToolTip": "..\\SlotMachine.UI.WPF\\ViewModels\\BaseViewModel.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAswEkAAAAAAAAAAAAAAA==",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\SlotMachine.UI.WPF\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SlotMachine.UI.WPF\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\SlotMachine.UI.WPF\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SlotMachine.UI.WPF\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAgwAQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T23:54:59.65Z",
+              "WhenOpened": "2025-06-26T11:56:04.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\SlotMachine.UI.WPF\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "SlotMachine.UI.WPF\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\SlotMachine.UI.WPF\\MainWindow.xaml",
+              "RelativeToolTip": "SlotMachine.UI.WPF\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-26T11:55:28.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "SlotSymbol.cs",
-              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\Models\\SlotSymbol.cs",
-              "RelativeDocumentMoniker": "..\\SlotMachine.UI.WPF\\Models\\SlotSymbol.cs",
-              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\Models\\SlotSymbol.cs",
-              "RelativeToolTip": "..\\SlotMachine.UI.WPF\\Models\\SlotSymbol.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T23:53:58.578Z"
+              "Title": "Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAwwL0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-06-26T13:59:07.951Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "..\\SlotMachine.UI.WPF\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\MainWindow.xaml*",
-              "RelativeToolTip": "..\\SlotMachine.UI.WPF\\MainWindow.xaml*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-25T09:06:36.586Z",
+              "Title": "CONSTANTS.cs",
+              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\Slotmachine\\CONSTANTS.cs",
+              "RelativeDocumentMoniker": "Slotmachine\\CONSTANTS.cs",
+              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\Slotmachine\\CONSTANTS.cs",
+              "RelativeToolTip": "Slotmachine\\CONSTANTS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T09:21:15.403Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "..\\SlotMachine.UI.WPF\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\MainWindow.xaml.cs",
-              "RelativeToolTip": "..\\SlotMachine.UI.WPF\\MainWindow.xaml.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwCEAAAAQAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\SlotMachine.UI.WPF\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "SlotMachine.UI.WPF\\ViewModels\\BaseViewModel.cs",
+              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\SlotMachine.UI.WPF\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "SlotMachine.UI.WPF\\ViewModels\\BaseViewModel.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T09:06:36.13Z"
+              "WhenOpened": "2025-06-26T12:25:35.07Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "RelayCommand.cs",
-              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\Commands\\RelayCommand.cs",
-              "RelativeDocumentMoniker": "..\\SlotMachine.UI.WPF\\Commands\\RelayCommand.cs",
-              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\SlotMachine.UI.WPF\\Commands\\RelayCommand.cs",
-              "RelativeToolTip": "..\\SlotMachine.UI.WPF\\Commands\\RelayCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-26T00:17:54.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAIwDgAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T08:58:29.626Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Logic.cs",
-              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\Logic.cs",
-              "RelativeDocumentMoniker": "Logic.cs",
-              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\Logic.cs",
-              "RelativeToolTip": "Logic.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAAAEQAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T08:58:29.631Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CONSTANTS.cs",
-              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\CONSTANTS.cs",
-              "RelativeDocumentMoniker": "CONSTANTS.cs",
-              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\CONSTANTS.cs",
-              "RelativeToolTip": "CONSTANTS.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T08:58:29.582Z"
+              "Title": "Microsoft.NET.Sdk.WindowsDesktop.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk.WindowsDesktop\\targets\\Microsoft.NET.Sdk.WindowsDesktop.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk.WindowsDesktop\\targets\\Microsoft.NET.Sdk.WindowsDesktop.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk.WindowsDesktop\\targets\\Microsoft.NET.Sdk.WindowsDesktop.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.301\\Sdks\\Microsoft.NET.Sdk.WindowsDesktop\\targets\\Microsoft.NET.Sdk.WindowsDesktop.targets",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAwwG4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-06-26T13:58:14.588Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "UIMethods.cs",
-              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\UIMethods.cs",
-              "RelativeDocumentMoniker": "UIMethods.cs",
-              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\UIMethods.cs",
-              "RelativeToolTip": "UIMethods.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAwwGgAAAAAAAAAAAAAAA==",
+              "Title": "SlotSymbol.cs",
+              "DocumentMoniker": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\SlotMachine.UI.WPF\\Models\\SlotSymbol.cs",
+              "RelativeDocumentMoniker": "SlotMachine.UI.WPF\\Models\\SlotSymbol.cs",
+              "ToolTip": "C:\\Users\\steli_88yt7cd\\source\\repos\\Slotmachine\\SlotMachine.UI.WPF\\Models\\SlotSymbol.cs",
+              "RelativeToolTip": "SlotMachine.UI.WPF\\Models\\SlotSymbol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T08:58:29.634Z"
+              "WhenOpened": "2025-06-26T12:25:38.574Z"
             }
           ]
         }
