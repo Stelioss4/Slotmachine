@@ -1,0 +1,15 @@
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\bin\Debug\net8.0\Slotmachine.exe
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\bin\Debug\net8.0\Slotmachine.deps.json
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\bin\Debug\net8.0\Slotmachine.runtimeconfig.json
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\bin\Debug\net8.0\Slotmachine.dll
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\bin\Debug\net8.0\Slotmachine.pdb
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\obj\Debug\net8.0\Slotmachine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\obj\Debug\net8.0\Slotmachine.AssemblyInfoInputs.cache
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\obj\Debug\net8.0\Slotmachine.AssemblyInfo.cs
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\obj\Debug\net8.0\Slotmachine.csproj.CoreCompileInputs.cache
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\obj\Debug\net8.0\Slotmachine.sourcelink.json
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\obj\Debug\net8.0\Slotmachine.dll
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\obj\Debug\net8.0\refint\Slotmachine.dll
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\obj\Debug\net8.0\Slotmachine.pdb
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\obj\Debug\net8.0\Slotmachine.genruntimeconfig.cache
+C:\Users\steli_88yt7cd\source\repos\Slotmachine\Slotmachine\obj\Debug\net8.0\ref\Slotmachine.dll
